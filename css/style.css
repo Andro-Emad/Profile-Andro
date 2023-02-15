@@ -238,6 +238,9 @@ header .nav__menu > li a:hover::before {
   }
 }
 @media (max-width: 767px) {
+  #home {
+    height: 80vh;
+  }
   #home .container .Text__home .social__media {
     /* transform: rotateZ(-90deg); */
     position: absolute;
@@ -334,7 +337,7 @@ header .nav__menu > li a:hover::before {
   background-image: url(../img/bg-section.jpg);
   background-repeat: round;
   background-position: unset;
-  height: 170vh;
+  height: 175vh;
   background-attachment: fixed;
   position: relative;
   padding-top: var(--main-padding-top);
@@ -384,6 +387,7 @@ header .nav__menu > li a:hover::before {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  overflow: hidden;
 }
 #services .container .box_grit .box:hover {
   transform: translateY(-10px);
@@ -391,10 +395,44 @@ header .nav__menu > li a:hover::before {
 #services .container .box_grit .box img {
   width: 50%;
 }
-#services .container .box_grit .box .img_cv {
-  width: 300px;
-  transform: rotateY(180deg);
+#services .container .box_grit .box img:first-child {
+  transform: translateX(-170%);
 }
+.fadeInLeft {
+  animation: fadeInLeft 4s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-150%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+#services .container .box_grit .box img:last-child {
+  width: 300px;
+  transform: translateX(170%);
+}
+.fadeInRight {
+  animation: fadeInRight 4s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
 #services .container .box_grit .box h3 {
   margin: 0.5rem 0;
   color: var(--color-Two);
@@ -421,7 +459,7 @@ header .nav__menu > li a:hover::before {
 }
 @media (max-width: 767px) {
   #services {
-    height: 250vh;
+    height: 170vh;
   }
 }
 /*End services*/
@@ -455,123 +493,39 @@ header .nav__menu > li a:hover::before {
 #skills .container .container_fa .skills_img img {
   width: 500px;
 }
-#skills .container .container_fa .skills_box .skill {
+#skills .container .container_fa .skills_box .skills {
   color: var(--color-Owe);
   padding: 1rem 0;
 }
-#skills .container .container_fa .skills_box .skill h3 {
+#skills .container .container_fa .skills_box .skills h3 {
   display: flex;
   justify-content: space-between;
 }
-#skills .container .container_fa .skills_box .skill div {
-  width: 300px;
-  background-color: #ddd;
-  bottom: 160px;
+
+.progress {
+  position: relative;
+  width: 500px;
+  height: 30px;
+  background-color: white;
+  margin: 10px;
   border-radius: 15px;
-  height: 20px;
 }
-#skills .container .container_fa .skills_box .skill .html::after {
-  content: "";
-  width: 0px;
-  height: 20px;
+.progress span {
   position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color);
   border-radius: 15px;
-  animation-name: up-and-html;
-  animation-duration: 3.3s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+  transition: width 0.3s linear;
 }
-@keyframes up-and-html {
-  0% {
-    background-color: var(--main-color);
-    width: 0%;
-  }
-  100% {
-    background-color: var(--main-color);
-    width: 240px;
-  }
-}
-#skills .container .container_fa .skills_box .skill .css::after {
-  content: "";
-  width: 0px;
-  height: 20px;
-  position: absolute;
-  border-radius: 15px;
-  animation-name: up-and-css;
-  animation-duration: 3.3s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-@keyframes up-and-css {
-  0% {
-    background-color: var(--main-color);
-    width: 0%;
-  }
-  100% {
-    background-color: var(--main-color);
-    width: 210px;
-  }
-}
-#skills .container .container_fa .skills_box .skill .js::after {
-  content: "";
-  width: 0px;
-  height: 20px;
-  position: absolute;
-  border-radius: 15px;
-  animation-name: up-and-js;
-  animation-duration: 3.3s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-@keyframes up-and-js {
-  0% {
-    background-color: var(--main-color);
-    width: 0%;
-  }
-  100% {
-    background-color: var(--main-color);
-    width: 150px;
-  }
-}
+
 @media (max-width: 767px) {
   #skills .container .container_fa .skills_img img {
     display: none;
   }
   #skills .container .container_fa .skills_box {
     width: 100%;
-  }
-  #skills .container .container_fa .skills_box .skill div {
-    width: 100%;
-  }
-  @keyframes up-and-html {
-    0% {
-      background-color: var(--main-color);
-      width: 0%;
-    }
-    100% {
-      background-color: var(--main-color);
-      width: 80%;
-    }
-  }
-  @keyframes up-and-css {
-    0% {
-      background-color: var(--main-color);
-      width: 0%;
-    }
-    100% {
-      background-color: var(--main-color);
-      width: 70%;
-    }
-  }
-  @keyframes up-and-js {
-    0% {
-      background-color: var(--main-color);
-      width: 0%;
-    }
-    100% {
-      background-color: var(--main-color);
-      width: 50%;
-    }
   }
 }
 /*End skills*/

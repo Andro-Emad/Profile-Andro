@@ -94,12 +94,29 @@ btn2.onclick = function () {
 };
 
 /* الهدف كان لما يوصل الي سكشن المهارات يضيف اسم الانميشن علشان يعمل شكل حلوا لما توصل للعنصر دا */
-// const an_skills = document.querySelector(".skill .html::after");
-// window.onscroll = function () {
-//   console.log(window.scrollY);
-//   if (window.scrollY >= 1000) {
-//     an_skills.style.cssText = `animation-name: up-and-html;`;
-//   } else {
-//     an_skills.style.cssText = `animation-name: up-and;`;
-//   }
-// };
+let box = document.querySelector("#services");
+let first = document.querySelector(" .box_grit .box img:first-child ");
+let last = document.querySelector(" .box_grit .box img:last-child ");
+
+/* الهدف كان لما يوصل الي سكشن المهارات يضيف اسم الانميشن علشان يعمل شكل حلوا لما توصل للعنصر دا */
+let skills = document.querySelector("#skills");
+let spans = document.querySelectorAll(".progress span");
+
+window.onscroll = function () {
+  if (window.scrollY >= box.offsetTop - 200) {
+    first.classList.add("fadeInLeft");
+    last.classList.add("fadeInRight");
+  } else {
+    first.classList.remove("fadeInLeft");
+    last.classList.remove("fadeInRight");
+  }
+  if (window.scrollY >= skills.offsetTop - 100) {
+    spans.forEach((span) => {
+      span.style.width = span.dataset.width;
+    });
+  } else {
+    spans.forEach((span) => {
+      span.style.width = `0`;
+    });
+  }
+};
