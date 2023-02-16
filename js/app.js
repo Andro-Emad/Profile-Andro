@@ -120,3 +120,8 @@ window.onscroll = function () {
     });
   }
 };
+
+// what year
+const spanYear = document.querySelector("footer .container span:last-child ");
+let dateNow = new Date();
+spanYear.innerHTML = `${dateNow.getFullYear()}`;

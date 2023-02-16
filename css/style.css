@@ -21,7 +21,7 @@ body {
   --main-color-alt: #1787e0;
   --background-color-Owe: #273036;
   --background-color-Two: #666666;
-  --transition: 0.4s;
+  --transition: 0.5s;
   --main-padding-top: 100px;
   --main-padding-bottom: 100px;
 }
@@ -517,7 +517,7 @@ header .nav__menu > li a:hover::before {
   height: 100%;
   background-color: var(--main-color);
   border-radius: 15px;
-  transition: width 0.3s linear;
+  transition: width var(--transition) linear;
 }
 
 @media (max-width: 767px) {
@@ -526,6 +526,9 @@ header .nav__menu > li a:hover::before {
   }
   #skills .container .container_fa .skills_box {
     width: 100%;
+  }
+  #skills .container .container_fa .skills_box .progress {
+    max-width: 100%;
   }
 }
 /*End skills*/
@@ -772,7 +775,7 @@ footer .container {
   text-align: center;
   padding: 15px 0;
 }
-footer .container span {
+footer .container span:first-child {
   color: #e91e63;
   /* border-bottom: 1px solid #e91e63; */
 }
