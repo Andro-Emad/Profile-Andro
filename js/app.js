@@ -125,3 +125,63 @@ window.onscroll = function () {
 const spanYear = document.querySelector("footer .container span:last-child ");
 let dateNow = new Date();
 spanYear.innerHTML = `${dateNow.getFullYear()}`;
+
+//More Projects  المزيد من المشاريع
+const elementDiv = document.querySelector("#projects .container .projects-box");
+const elementBott = document.querySelector("#projects .container .a_p .a_bott");
+function* generateNumbers() {
+  yield (innerHTML = `<div class="card">
+  <img src="img/project-1.PNG" alt="" />
+  <div class="links">
+    <a href="https://andro-emad.github.io/Web-Page/" target="_blank"><i
+        class="fa-regular fa-eye fa-bounce"></i></a>
+    <a href="https://github.com/Andro-Emad/Web-Page" target="_blank"><i
+        class="fa-brands fa-github fa-beat-fade"></i></a>
+  </div>`);
+  yield (innerHTML = `<div class="card">
+  <img src="img/project-1.PNG" alt="" />
+  <div class="links">
+    <a href="https://andro-emad.github.io/Web-Page/" target="_blank"><i
+        class="fa-regular fa-eye fa-bounce"></i></a>
+    <a href="https://github.com/Andro-Emad/Web-Page" target="_blank"><i
+        class="fa-brands fa-github fa-beat-fade"></i></a>
+  </div>`);
+  yield (innerHTML = `<div class="card">
+  <img src="img/project-1.PNG" alt="" />
+  <div class="links">
+    <a href="https://andro-emad.github.io/Web-Page/" target="_blank"><i
+        class="fa-regular fa-eye fa-bounce"></i></a>
+    <a href="https://github.com/Andro-Emad/Web-Page" target="_blank"><i
+        class="fa-brands fa-github fa-beat-fade"></i></a>
+  </div>`);
+  yield (innerHTML = `<div class="card">
+  <img src="img/project-1.PNG" alt="" />
+  <div class="links">
+    <a href="https://andro-emad.github.io/Web-Page/" target="_blank"><i
+        class="fa-regular fa-eye fa-bounce"></i></a>
+    <a href="https://github.com/Andro-Emad/Web-Page" target="_blank"><i
+        class="fa-brands fa-github fa-beat-fade"></i></a>
+  </div>`);
+  yield (innerHTML = `<div class="card">
+  <img src="img/project-1.PNG" alt="" />
+  <div class="links">
+    <a href="https://andro-emad.github.io/Web-Page/" target="_blank"><i
+        class="fa-regular fa-eye fa-bounce"></i></a>
+    <a href="https://github.com/Andro-Emad/Web-Page" target="_blank"><i
+        class="fa-brands fa-github fa-beat-fade"></i></a>
+  </div>`);
+  yield (innerHTML = `<div class="card">
+  <img src="img/project-1.PNG" alt="" />
+  <div class="links">
+    <a href="https://andro-emad.github.io/Web-Page/" target="_blank"><i
+        class="fa-regular fa-eye fa-bounce"></i></a>
+    <a href="https://github.com/Andro-Emad/Web-Page" target="_blank"><i
+        class="fa-brands fa-github fa-beat-fade"></i></a>
+  </div>`);
+}
+
+elementBott.addEventListener("click", () => {
+  for (let value of generateNumbers()) {
+    elementDiv.innerHTML += `${value}`;
+  }
+});
